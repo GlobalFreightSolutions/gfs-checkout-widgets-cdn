@@ -1,0 +1,7 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "gfs-checkout-collection": "https://github.com/GlobalFreightSolutions/gfs-checkout-collection.git"
+  }
+}
