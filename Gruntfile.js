@@ -25,14 +25,14 @@ module.exports = function (grunt) {
             production: {
                 files: [
                     {expand: true, src: ['bower_components/gfs-carrier-icon/*-vulcanized.html'], dest: 'tmp/', flatten: true},
-                    {expand: true, src: ['bower_components/gfs-carrier-icon/images/*'], dest: 'deploy/images', flatten: true },
+                    {expand: true, src: ['**'], cwd: 'bower_components/gfs-carrier-icon/images', dest: 'deploy/images', flatten: false },
                     {expand: true, src: ['bower_components/gfs-carrier-info/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-checkout-button/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-checkout-widget/*-vulcanized.html'], dest: 'tmp/', flatten: true },
-                    {expand: true, src: ['bower_components/gfs-checkout-widget/assets/*.png'], dest: 'deploy/images', flatten: true },
+                    {expand: true, src: ['*.png'], cwd: 'bower_components/gfs-checkout-widget/images', dest: 'deploy/images', flatten: false },
                     {expand: true, src: ['bower_components/gfs-delivery-address/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-droppoint/*-vulcanized.html'], dest: 'tmp/', flatten: true },
-                    {expand: true, src: ['bower_components/gfs-droppoint/images/*'], dest: 'deploy/images', flatten: true },
+                    {expand: true, src: ['**'], cwd: 'bower_components/gfs-droppoint/images', dest: 'deploy/images', flatten: false },
                     {expand: true, src: ['bower_components/gfs-selected-droppoint/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-supported-carriers/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-checkout-collection/*-vulcanized.html'], dest: 'tmp/', flatten: true }
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                     patterns: [
                         {
                             match: /\/bower_components\/[^\/]+\/images\//g,   ///\/bower_components\/[^\/]+\//,
-                            replacement: 'https://cloudflare/foo/images/'
+                            replacement: 'http://gfscdnproxy.azurewebsites.net/images/'
                         }
                     ]
                 },
