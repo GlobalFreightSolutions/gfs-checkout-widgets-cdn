@@ -65,8 +65,14 @@ module.exports = function (grunt) {
                 options: {
                     patterns: [
                         {
+                            // Images
                             match: /\/bower_components\/[^\/]+\/images\//g,   ///\/bower_components\/[^\/]+\//,
                             replacement: 'http://gfscdnproxy.azurewebsites.net/images/'
+                        },
+                        {
+                            // font-awesome
+                            match: /..\/font-awesome\/fonts/g,
+                            replacement: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/fonts'
                         }
                     ]
                 },
