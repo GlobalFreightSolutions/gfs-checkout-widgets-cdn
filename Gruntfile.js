@@ -29,14 +29,16 @@ module.exports = function (grunt) {
                     {expand: true, src: ['bower_components/gfs-carrier-info/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-checkout-button/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-checkout-widget/*-vulcanized.html'], dest: 'tmp/', flatten: true },
-                    {expand: true, src: ['*.png'], cwd: 'bower_components/gfs-checkout-widget/images', dest: 'deploy/images', flatten: false },
+                    {expand: true, src: ['**'], cwd: 'bower_components/gfs-checkout-widget/images', dest: 'deploy/images', flatten: false },
                     {expand: true, src: ['bower_components/gfs-delivery-address/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-droppoint/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['**'], cwd: 'bower_components/gfs-droppoint/images', dest: 'deploy/images', flatten: false },
                     {expand: true, src: ['bower_components/gfs-selected-droppoint/*-vulcanized.html'], dest: 'tmp/', flatten: true },
                     {expand: true, src: ['bower_components/gfs-supported-carriers/*-vulcanized.html'], dest: 'tmp/', flatten: true },
-                    {expand: true, src: ['bower_components/gfs-checkout-collection/*-vulcanized.html'], dest: 'tmp/', flatten: true }
-                ]
+                    {expand: true, src: ['bower_components/gfs-checkout-collection/*-vulcanized.html'], dest: 'tmp/', flatten: true },
+					{expand: true, src: ['bower_components/webcomponentsjs/*.js'], dest: 'deploy/webcomponentsjs', flatten: true },
+ 					{expand: true, src: ['bower_components/brick-common'], dest: 'deploy/brick-common', flatten: true }
+               ]
             }
         },
         vulcanize: {
@@ -67,7 +69,7 @@ module.exports = function (grunt) {
                         {
                             // Images
                             match: /\/bower_components\/[^\/]+\/images\//g,   ///\/bower_components\/[^\/]+\//,
-                            replacement: 'http://gfscdnproxy.azurewebsites.net/images/'
+                            replacement: 'http://gfswidgetcdn.azurewebsites.net/images/'
                         },
                         {
                             // font-awesome
