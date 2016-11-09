@@ -55,10 +55,10 @@ module.exports = function (grunt) {
                     'bower_components/gfs-checkout-button/gfs-checkout-button-vulcanized.html': 'bower_components/gfs-checkout-button/gfs-checkout-button.html',
                     'bower_components/gfs-checkout-collection/gfs-checkout-collection-vulcanized.html': 'bower_components/gfs-checkout-collection/gfs-checkout-collection.html',
                     'bower_components/gfs-checkout-widget/gfs-checkout-widget-vulcanized.html': 'bower_components/gfs-checkout-widget/gfs-checkout-widget.html',
-                    'bower_components/gfs-delivery-address/delivery-address-vulcanized.html': 'bower_components/gfs-delivery-address/gfs-delivery-address.html',
+                    'bower_components/gfs-delivery-address/gfs-delivery-address-vulcanized.html': 'bower_components/gfs-delivery-address/gfs-delivery-address.html',
                     'bower_components/gfs-droppoint/gfs-droppoint-vulcanized.html': 'bower_components/gfs-droppoint/gfs-droppoint.html',
                     'bower_components/gfs-selected-droppoint/gfs-selected-droppoint-vulcanized.html': 'bower_components/gfs-selected-droppoint/gfs-selected-droppoint.html',
-                    'bower_components/gfs-supported-carriers/gfssupported-carriers-vulcanized.html': 'bower_components/gfs-supported-carriers/gfs-supported-carriers.html',
+                    'bower_components/gfs-supported-carriers/gfs-supported-carriers-vulcanized.html': 'bower_components/gfs-supported-carriers/gfs-supported-carriers.html',
                 }
             }
         },
@@ -90,5 +90,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-vulcanize');
     grunt.loadNpmTasks('grunt-replace');
-    grunt.registerTask('build-cdn-deployment', ['clean:full', 'bower-install-simple', 'vulcanize', 'copy', 'replace', 'clean:tidy']);
+    grunt.registerTask('default', ['clean:full', 'bower-install-simple', 'vulcanize', 'copy', 'replace', 'clean:tidy']);
+    //grunt.registerTask('build-cdn-deployment', ['clean:full', 'bower-install-simple', 'vulcanize', 'copy', 'replace', 'clean:tidy']);
 };
